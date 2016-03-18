@@ -1,0 +1,61 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+  height: 80vh;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 15%;
+}
+
+#index-page-search {
+  width: 40%;
+  margin: 0 auto;
+  padding-left: 10px;
+  height: 46px;
+  font-size: 15px;
+}
+
+#index-page-btn {
+  min-width: 15%;
+}
+
+.row-category {
+  height: 15vh;
+}
+
+.row {
+  margin: 40px;
+}
+
+.category-block {
+  background: grey;
+  height: 220px;
+}
+
+.navbar-default {
+    background-color: #5c5cb8;
+}
+
+footer {
+  height: 60px;
+}
+
+.jumbotron {
+  padding-top: 50px;
+}
+
+.brand {
+  height: 55px;}
+
+.main-photo {
+  margin: 50px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+#login-email, #login-password {
+  width: 170px;
+}
