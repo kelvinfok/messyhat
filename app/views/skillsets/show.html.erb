@@ -1,0 +1,16 @@
+<div class="navbar-compensation">
+
+<div align="center">
+<h2>Users who knows <%= @skillset.name %></h2>
+
+  <% @profile.each do |profile| %>
+  <% if profile.my_skill == @skillset.name %>
+    <div class="search-listing"><%= image_tag 'profile.png', class: 'search-result-profile' %><br>
+    <%= profile.first_name %><br>
+    <%= link_to 'Show', profile %>
+    </div>
+  <% end %>
+  <% end %>
+</div>
+
+</div>

@@ -1,11 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.jumbotron {
-  height: 80vh;
+.search-container {
   text-align: center;
-  padding-top: 5%;
-  padding-bottom: 15%;
+  padding-top: 50px;
+  padding-bottom: 120px;
+  background: #eeeeee;
 }
 
 #index-page-search {
@@ -41,15 +41,13 @@ footer {
   height: 60px;
 }
 
-.jumbotron {
-  padding-top: 50px;
-}
 
 .brand {
   height: 55px;}
 
-.main-photo {
-  margin: 50px;
+.cover-photo {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .navbar-brand {
@@ -58,4 +56,150 @@ footer {
 
 #login-email, #login-password {
   width: 170px;
+}
+
+.register-label, .register-label a:hover {
+  padding-top: 7px;
+  color: white;
+}
+
+.register-label a:link, .register-label a:active {
+  color: #70DB93;
+}
+
+.register-label a:visited {
+  color: #70DB93;
+}
+
+.sign-up-form {
+  margin: 60px auto;
+}
+
+.signing-up-input {
+width: 200px;
+margin: 0 auto;
+}
+
+.signing-up-input-email {
+width: 200px;
+margin: 0 auto;
+}
+
+.form-field-margin-top {
+  margin-top: 30px;
+}
+
+.flash-message {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.navbar-compensation {
+  margin-top: 70px;
+}
+
+.profile-page {
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.profile-photo {
+  margin: 5px;
+}
+
+.lookingfor-block, .exchange-block {
+  text-align: center;
+  font-size: 20px;
+}
+
+.search-result-profile {
+  height: 100px;
+}
+
+.search-listing {
+  margin: 20px;
+}
+
+.listing-headers {
+  background: lightblue;
+  width: 150px;
+  padding: 5px;
+}
+
+.listing-headers-summary {
+  background: lightpink;
+  width: 300px;
+  padding: 5px;
+}
+
+.listing-data {
+  padding: 2px;
+  padding-left: 5px;
+}
+
+#profile_date_of_birth_1i, #profile_date_of_birth_2i,
+#profile_date_of_birth_3i, #profile_country, #profile_looking_for, #profile_my_skill {
+      width: 60px;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+#profile_date_of_birth_2i {
+  width: 80px;
+}
+
+#profile_date_of_birth_3i {
+  width: 50px;
+}
+
+#profile_country, #profile_looking_for, #profile_my_skill {
+  width: 200px;
+}
+
+#profile_summary {
+  height: 200px;
+  width: 300px;
+  resize: none;
+}
+
+.avatar-round-image {
+background-color: white;
+border: 1px solid #d9d9d9;
+border-radius: 10px;
+-moz-border-radius: 25px;
+-webkit-border-radius: 25px;
+
+overflow: hidden;
+text-align: center;
+img { width: 100% }
+}
+
+.forget-password-link a:link {
+    color: orange;
+}
+
+.forget-password-link a:visited {
+    color: orange;
+}
+
+.forget-password-link a:hover {
+    color: orange;
+}
+
+.forget-password-link a:active {
+    color: orange;
 }

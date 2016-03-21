@@ -1,0 +1,25 @@
+<div class="form-field-margin-top">
+
+<div align="center">
+<%= form_for(@skillset) do |f| %>
+  <% if @skillset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skillset.errors.count, "error") %> prohibited this skillset from being saved:</h2>
+
+      <ul>
+      <% @skillset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, class: 'form-control signing-up-input', placeholder: 'Skillset Name' %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit "Complete", class: 'btn btn-success' %>
+  </div>
+<% end %>
+</div>
+</div>

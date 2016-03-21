@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="listing-headers">First name</th>
+      <th class="listing-headers">Last name</th>
+      <th class="listing-headers">Date of birth</th>
+      <th class="listing-headers">Country</th>
+      <th class="listing-headers">Looking for</th>
+      <th class="listing-headers">My skill</th>
+      <th class="listing-headers-summary">Summary</th>
+      <th class="listing-headers" colspan="3">Controls</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td class="listing-data"><%= profile.first_name %></td>
+        <td class="listing-data"><%= profile.last_name %></td>
+        <td class="listing-data"><%= profile.age %></td>
+        <td class="listing-data"><%= profile.country %></td>
+        <td class="listing-data"><%= profile.looking_for %></td>
+        <td class="listing-data"><%= profile.my_skill %></td>
+        <td class="listing-data"><%=h truncate(profile.summary, :length => 30) %></td>
+        <td><%= link_to 'Show', profile %>&nbsp;</td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %>&nbsp;</td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>

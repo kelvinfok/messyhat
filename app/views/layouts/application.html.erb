@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Missions</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= render 'home/navbar' %>
-<div class="jumbotron">
-  <div class="container">
-<%= yield %>
-  </div>
-</div>
-
-<%= render 'home/footer' %>
-</body>
-
-
+  <head>
+    <title>Missions</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'home/navbar' %>
+    <div class="navbar-compensation">
+      <div class="container">
+        <%= render 'home/flash' %>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'home/footer' %>
+  </body>
 </html>

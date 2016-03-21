@@ -1,0 +1,53 @@
+<div class="form-field-margin-top">
+
+<div align="center">
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :image %><br />
+   <%= f.file_field :image %><br><br>
+  </div>
+  <div class="field">
+    <%= f.text_field :first_name, class: 'form-control signing-up-input', placeholder: 'First Name' %><br>
+  </div>
+  <div class="field">
+    <%= f.text_field :last_name, class: 'form-control signing-up-input', placeholder: 'Last Name' %><br>
+  </div>
+  <div class="field">
+    <%= f.label "Date Of Birth" %><br />
+   <%= f.date_select :date_of_birth, start_year: 1950 %><br><br>
+  </div>
+  <div class="field">
+    <%= f.label "Country of origin" %><br />
+    <%= f.select :country, ['Singapore', 'Outside Of Singapore'] %><br><br>
+  </div>
+  <div class="field">
+    <%= f.label "Skills Looking For" %><br />
+    <%= f.collection_select(:looking_for, @skillset, :id, :name) %><br><br>
+  </div>
+  <div class="field">
+    <%= f.label "My Skills to offer" %><br />
+    <%= f.collection_select(:my_skill, @skillset, :id, :name) %><br><br>
+  </div>
+  <div class="field">
+    <%= f.label "Summary about myself" %><br />
+    <%= f.text_area :summary, class: 'form-control signing-up-input', placeholder: 'Describe yourself in less than 200 words ..'  %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit "Complete", class: 'btn btn-success' %>
+  </div>
+<% end %>
+</div>
+</div>
