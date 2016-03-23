@@ -1,7 +1,11 @@
-<h2 align="center">Sign Up</h2>
+<div class="container">
+  <div class="min-body-height">
+  <div class="page-header" align="center">
+    <h1>Sign Up</h1>
+  </div>
 
-<%= form_for @user do |f| %>
-<% if @user.errors.any? %>
+  <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
   <div class="error_messages">
     <h2>Form is invalid</h2>
     <ul>
@@ -11,14 +15,55 @@
     </ul>
   </div>
   <% end %>
+  <div id="signupbox" style="margin-top:20px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Sign Up</div>
+        <div style="float:right; font-size: 85%; position: relative; top:-10px">
+          <a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <form id="signupform" class="form-horizontal" role="form">
 
-  <div class="form-field-margin-top">
-    <%= f.text_field :email, class: 'form-control signing-up-input-email', placeholder: 'Your Email' %><br />
-    <%= f.password_field :password, class: 'form-control signing-up-input', placeholder: 'Password' %><br />
-    <%= f.password_field :password_confirmation, class: 'form-control signing-up-input', placeholder: 'Confirmation' %>
-  </div><br />
-  <div class="actions" align="center">
-  <%= f.submit "Sign Up", class: 'btn btn-success' %><br /><br />
-  <p>By signing up, you agree to comply to our <%= link_to 'terms of use', terms_path %>.</p>
+          <div id="signupalert" style="display:none" class="alert alert-danger">
+            <p>Error:</p>
+            <span></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="col-md-3 control-label">Email</label>
+            <div class="col-md-9">
+              <%= f.text_field :email, class: 'form-control', placeholder: 'Email Address', type: 'text' %>
+            </div>
+          </div><br><br>
+
+          <div class="form-group">
+            <label for="password" class="col-md-3 control-label">Password</label>
+            <div class="col-md-9">
+              <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+            </div>
+          </div><br><br>
+
+          <div class="form-group">
+            <label for="password_confirmation" class="col-md-3 control-label">Password Confirmation</label>
+            <div class="col-md-9">
+              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmation' %>
+            </div>
+          </div><br><br>
+
+          <div class="form-group">
+            <!-- Button -->
+            <div class="col-md-offset-3 col-md-9 actions">
+              <%= f.submit "Sign Up", class: 'btn btn-info' %><br><br>
+              <small>By signing up, you agree to comply to our
+                <%= link_to 'terms of use', terms_path %></small>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <% end %>
+    </div>
   </div>
-  <% end %>

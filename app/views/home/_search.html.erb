@@ -3,10 +3,14 @@
 <%= image_tag 'main-photo.png', class: 'cover-photo' %>
 <p class="lead">Messy Hat is a social networking site for you to upskill through a community of learners.</p>
 
-<fieldset class="main-fieldset">
-  <input id="index-page-search" type="text" placeholder="What do you want to learn today?" size="30"/>
-  <a id="index-page-btn" class="btn btn-primary btn-lg" href="#" role="button">Search &raquo;</a>
-</fieldset>
+
+
+<%= form_tag(search_path, :method => "get", id: "search-form") do %>
+<div class="search-bar-wrapper">
+<%= text_field_tag :my_skill, params[:my_skill], class: 'form-control search-bar', placeholder: "Search People" %>
+<%= submit_tag "Search", class: 'btn btn-success' %></div>
+<% end %>
+
 </div>
 </div>
 </div>

@@ -28,6 +28,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem "paperclip", "~> 4.3"
 gem 'pg_search'
 
+gem "paperclip", "~> 4.3"
+gem "fog"
+gem "figaro"
+gem 'rails_12factor', group: :production
+gem 'puma'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

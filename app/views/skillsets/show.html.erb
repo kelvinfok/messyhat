@@ -1,16 +1,54 @@
 <div class="navbar-compensation">
+<div class="container">
 
-<div align="center">
-<h2>Users who knows <%= @skillset.name %></h2>
+	<div class="page-header" align="center">
+	  <h1>Users Who Knows <%= capital_first_character(@skillset.name) %></h1>
+	</div>
 
-  <% @profile.each do |profile| %>
-  <% if profile.my_skill == @skillset.name %>
-    <div class="search-listing"><%= image_tag 'profile.png', class: 'search-result-profile' %><br>
-    <%= profile.first_name %><br>
-    <%= link_to 'Show', profile %>
-    </div>
-  <% end %>
-  <% end %>
-</div>
 
-</div>
+
+
+
+<div class="container">
+
+	<% @profile.each do |profile| %>
+<% if profile.my_skill == Skillset.find_by_name(@skillset.name).id %>
+
+
+
+	<div class="row">
+		<div class="col-lg-3 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <%= image_tag profile.image.url(:thumb), class: 'search-result-profile' %>
+                </div>
+                <div class="info">
+                    <div class="title", style="font-weight: bold; color: #515151;"><%= profile.first_name + " " + profile.last_name %></div>
+                    <div class="desc">Other Skills:<br>
+		                <span class="label label-info">Zumba Training</span>
+		                <span class="label label-success">Parachuting</span></div>
+                </div>
+                <div class="bottom">
+
+<p>
+										 <%= link_to "View Profile", profile, class: 'btn btn-primary btn-twitter btn-sm' %>
+</p>
+                </div>
+            </div>
+
+        </div>
+
+	</div>
+
+
+
+						<% end %>
+					  <% end %>
+
+
+          </div>
+          </div>

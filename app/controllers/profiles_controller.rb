@@ -2,34 +2,45 @@ class ProfilesController < ApplicationController
 
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  # GET /profiles
-  # GET /profiles.json
+  def matches
+    skillwanted_id = Profile.find_by_user_id(current_user.id).looking_for
+    @skillwanted_name = Skillset.find_by_id(skillwanted_id).name
+    @result = Profile.search_name(skillwanted_id)
+  end
+
+
+  def search
+    if find_id(params[:my_skill]) != false
+    skillset_id = find_id(params[:my_skill])
+    @results = Profile.search_name(skillset_id)
+  else
+    flash[:error] = "No Results Found"
+    redirect_to :back
+  end
+end
+
   def index
     @profiles = Profile.all
   end
 
-  # GET /profiles/1
-  # GET /profiles/1.json
   def show
   end
 
-  # GET /profiles/new
+
   def new
     @profile = Profile.new
     @skillset = Skillset.all
+    @involement = Involvement.all
   end
 
-  # GET /profiles/1/edit
   def edit
     @skillset = Skillset.all
   end
 
-  # POST /profiles
-  # POST /profiles.json
+
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
-
 
     respond_to do |format|
       if @profile.save
@@ -76,6 +87,15 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :country, :looking_for, :my_skill, :summary, :image)
     end
+
+
+    def user_params
+      params.require(:user).permit(:first_name)
+    end
+
+    def find_id name
+      return Skillset.find_by_name(name).id
+  end
 
 
 

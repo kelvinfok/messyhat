@@ -8,7 +8,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer :looking_for
       t.integer :my_skill
       t.text :summary
-
+      t.integer :involvement
       t.timestamps null: false
     end
   end

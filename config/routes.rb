@@ -15,6 +15,7 @@ get 'signup', to: 'users#new'
 get 'login', to: 'sessions#new'
 get 'logout', to: 'sessions#destroy'
 
-
+get 'search', to: 'profiles#search'
+get '/matches', to: 'profiles#matches'
 
 end

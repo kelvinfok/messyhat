@@ -1,0 +1,7 @@
+<h1 align="center">Search Results for <%= params[:my_skill] %></h1>
+
+<% @results.each do |result| %>
+<div align="center">
+  <%= image_tag result.image.url(:medium), class: 'avatar-round-result' %><br>
+ <p><%= link_to result.fullname, '/profiles/' + result.id.to_s %></p></div>
+<% end %>
