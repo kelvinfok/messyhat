@@ -1,11 +1,44 @@
-<h1 align="center">Matches</h1>
+<div class="navbar-compensation">
+  <div class="container">
+    <div class="min-body-height">
+      <div class="page-header" align="center">
+        <h1>Members who possess the skillset:
+          <%= @skillwanted_name %></h1>
+      </div>
 
-<h3 align="center">Here's a list of members who possess the skillset: <%= @skillwanted_name %></h3>
-<p>&nbsp;</p>
+      <div class="row">
+        <% @result.each do |result| %>
+        <div class="col-lg-3 col-sm-6">
+        <div class="card hovercard">
+          <div class="cardheader"></div>
+          <div class="avatar">
+            <%= image_tag result.image.url(:medium), class: 'avatar-round-result' %>
+          </div>
+
+          <div class="info">
+            <div class="title" , style="font-weight: bold; color: #515151;">
+            <%= result.first_name + " " + result.last_name %></div>
+            <div class="desc">Other Skills:<br>
+              <span class="label label-info">Zumba Training</span>
+              <span class="label label-success">Parachuting</span>
+            </div>
+          </div>
+
+          <div class="bottom">
+            <p>
+              <%= link_to result.fullname, '/profiles/' + result.id.to_s %>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <% end %>
+</div>
 
 
-<% @result.each do |result| %>
-<div align="center">
-  <%= image_tag result.image.url(:medium), class: 'avatar-round-result' %><br>
- <p><%= link_to result.fullname, '/profiles/' + result.id.to_s %></p></div>
-<% end %>
+
+    </div>
+  </div>
+</div>

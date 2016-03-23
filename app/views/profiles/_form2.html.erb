@@ -20,7 +20,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form role="form">
-			<h2>Complete Profile <small>It's free and always will be.</small></h2>
+			<h2>Complete Profile <small>It's free and will always be.</small></h2>
 			<hr class="colorgraph">
 
 			<div class="form-group">
@@ -33,11 +33,11 @@
 
       <div class="form-group">
         <%= f.label "Date Of Birth" %><br>
-       <%= f.date_select :date_of_birth, start_year: 1950, class: 'form-control' %><br><br>
+       <%= f.date_select :date_of_birth, start_year: 1950, end_year: 2016, class: 'form-control' %><br><br>
       </div>
 
       <div class="form-group">
-        <%= f.label "Country" %><br>
+        <%= f.label "Country of Residence" %><br>
         <%= f.select :country, ['Singapore', 'Outside Of Singapore'] %>
       </div>
 
@@ -53,7 +53,7 @@
 
       <div class="form-group">
         <%= f.label "Involvement" %>
-        <%= f.collection_select(:involvement, @involement, :id, :name) %>
+        <%= f.collection_select(:involvement, @involvement, :id, :name) %>
       </div>
 
 			<div class="form-group">
@@ -62,26 +62,12 @@
 			</div>
 
 
+			<div class="form-group">
+      <%= f.label "Upload Profile Photo" %>
+      <%= f.file_field :image %>
+			</div>
 
-      <div class="form-group">
-
-      </div>
-
-      <div class="form-group">
-
-      </div>
-
-      <div class="form-group">
-
-      </div>
-
-      <div class="form-group">
-
-      </div>
-
-			<hr class="colorgraph">
-
-        <%= f.submit "Complete", class: 'btn btn-success btn-block btn-lg' %>
+        <%= f.submit "Complete", class: 'btn btn-success btn-lg btn-block' %>
 
 		</form>
 	</div>

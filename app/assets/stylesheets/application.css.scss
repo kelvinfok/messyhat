@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.profile-white {
+  background: white;
+}
+
+.log-in-bar {
+  width: 300px;
+}
+
 .search-container {
   text-align: center;
   padding-top: 50px;
@@ -19,6 +27,10 @@
 .btn {
   display: inline;
   height: 38px;
+}
+
+.btn-lg {
+  padding: 0;
 }
 
 .cover-photo {
@@ -211,7 +223,8 @@ width: 140px;
 margin-bottom: 10px;
 overflow: hidden;
 text-align: center;
-img { width: 100% }
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
 }
 
 .avatar-round-result {
@@ -250,7 +263,7 @@ img { width: 100% }
 }
 
 .min-body-height {
-  min-height: 65vh;
+  min-height: 69vh;
 }
 
 .label-tag {

@@ -6,4 +6,13 @@ class User < ActiveRecord::Base
   validates :password, :length => 6..20
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :email, presence: true, uniqueness: true
+
+
+
+
+
+
+
+
+
 end

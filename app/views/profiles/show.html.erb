@@ -1,49 +1,58 @@
 <div class="container">
-    <div class="row">
-<br>
-<br>
-    	<div class="span3 well">
-        <center>
-         <%= image_tag @profile.image.url(:medium), class: 'avatar-round-image' %>
-          <h3 class="media-heading"><%= @profile.fullname %><br><small><%= @profile.age %>, <%= @profile.country %></small></h3>
-          <%= link_to 'Edit Profile', edit_profile_path(@profile) %><br><br>
+  <div class="row">
 
-          <div class="skillset">
+    <div class="span3 well">
+      <center>
+        <%= image_tag @profile.image.url(:medium), class: 'avatar-round-image' %>
+        <h3 class="media-heading"><%= @profile.fullname %><br>
+          <small><%= @profile.age %>,
+            <%= @profile.country %></small>
+        </h3>
+        <%= link_to 'Edit Profile', edit_profile_path(@profile) %><br><br>
 
-                <span><strong>Skills Offering: </strong></span>
-                <span class="label label-tag label-warning"><%= capital_first_character(@profile.getskillname(@profile.my_skill).name) %></span>
-                <span class="label label-tag label-info">Zumba Training</span>
-                <span class="label label-tag label-success">Parachuting</span>
-                <br><br>
-                <span><strong>Skills Seeking: </strong></span>
-                <span class="label label-tag label-warning"> <%= capital_first_character(@profile.getskillname(@profile.looking_for).name) %></span>
-                <span class="label label-tag label-success">Chinese Painting</span>
-                <br><br>
-                <span class="label label-info">Open To: Collaborations 	&amp; New Ideas Within My Skillsets</span>
-              </div>
-    </center>
-    <hr>
-    <center>
-    <p class="text-left"><strong>Bio Summary: </strong><br>
-      <%= @profile.summary %></p>
+        <div class="skillset">
+
+          <span>
+            <strong>Skills Offering:
+            </strong>
+          </span>
+          <span class="label label-tag label-warning"><%= capital_first_character(@profile.getskillname(@profile.my_skill).name) %></span>
+          <span class="label label-tag label-info">Zumba Training</span>
+          <span class="label label-tag label-success">Parachuting</span>
+          <br><br>
+          <span>
+            <strong>Skills Seeking:
+            </strong>
+          </span>
+          <span class="label label-tag label-warning">
+            <%= capital_first_character(@profile.getskillname(@profile.looking_for).name) %></span>
+          <span class="label label-tag label-success">Chinese Painting</span>
+          <br><br>
+          <span class="label label-info"><%= Involvement.find_by_id(@profile.involvement).name  %></span>
+        </div>
       </center>
       <hr>
       <center>
-      <p class="text-left"><strong>I'm On This Site Because: </strong><br>
-       <%= @profile.summary %></p>
+        <p class="text-left">
+          <strong>Bio Summary:
+          </strong><br>
+          <%= @profile.summary %></p>
+      </center>
+      <hr>
+      <center>
+        <p class="text-left">
+          <strong>I'm On This Site Because:
+          </strong><br>
+          <%= @profile.summary %></p>
         <hr>
         <center>
-        <p class="text-left"><strong>Works &amp; Involvements:</strong><br>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+          <p class="text-left">
+            <strong>Works &amp; Involvements:</strong><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
           <br>
+        </div>
+
+
+
+          
       </div>
-	</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>

@@ -9,7 +9,6 @@
        </button>
        <a class="navbar-brand" href="/">
        <%= image_tag "logo.png" %>
-       <%= show_user_session_id %> <%= show_profile_id %>
        </a>
      </div>
 
@@ -21,7 +20,7 @@
      <%= form_tag sessions_path do %>
      <% if current_user %>
       <div style="color:white;">Logged in as <%= current_user.email %><br>
-       <span class="orange-link"><%= link_to "My Profile", '/profiles/' + current_user.id.to_s %> |
+       <span class="orange-link"><%= link_to "My Profile", '/profiles/' + get_my_profile.to_s %> |
           <%= link_to "My Matches", matches_path %> | <%= link_to "Log out", logout_path %></span></div>
        <% else %>
        <div class="form-group">
@@ -36,7 +35,7 @@
            <%= submit_tag "Sign In", class: 'btn btn-success' %>
        </div>
          <br><div id="home" class="register-label">New User? <%= link_to 'Sign Up Now', signup_path %>
-           <span style="float:right" class="orange-link"><%= link_to 'Forget Password?', 'http://www.google.com', id: 'forget-password-link' %></span></div>
+          </div>
 
        <% end %>
 

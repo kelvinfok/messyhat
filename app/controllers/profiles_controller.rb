@@ -10,8 +10,8 @@ class ProfilesController < ApplicationController
 
 
   def search
-    if find_id(params[:my_skill]) != false
-    skillset_id = find_id(params[:my_skill])
+    if find_id(params[:my_skill]).present?
+    skillset_id = find_id(params[:my_skill]).id
     @results = Profile.search_name(skillset_id)
   else
     flash[:error] = "No Results Found"
@@ -30,11 +30,12 @@ end
   def new
     @profile = Profile.new
     @skillset = Skillset.all
-    @involement = Involvement.all
+    @involvement = Involvement.all
   end
 
   def edit
     @skillset = Skillset.all
+    @involvement = Involvement.all
   end
 
 
@@ -44,6 +45,9 @@ end
 
     respond_to do |format|
       if @profile.save
+        @user = User.find_by_id(@profile.user_id)
+        @user.update_attribute(:completed, true)
+
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
@@ -85,7 +89,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :country, :looking_for, :my_skill, :summary, :image)
+      params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :country, :looking_for, :my_skill, :summary, :image, :involvement)
     end
 
 
@@ -94,7 +98,7 @@ end
     end
 
     def find_id name
-      return Skillset.find_by_name(name).id
+      return Skillset.find_by_name(name)
   end
 
 
