@@ -42,9 +42,7 @@ def capital_first_character text
 end
 
 def get_my_profile
-if !logged_in?
 Profile.find_by_user_id(current_user.id).id
-end
 end
 
 end
